@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: deploy2
+  name: deploy2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: deploy2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: deploy2
+    spec:
+      containers:
+      - image: gcr.io/eventsite-256816/event-server1-image:v0.BUILD_NUMBER
+        name: deploy2
+        resources: {}
+status: {}

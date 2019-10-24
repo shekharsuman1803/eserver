@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-10-23T19:21:50Z"
+  labels:
+    run: eventappserver
+  name: eventserver-lb
+  namespace: default
+  resourceVersion: "5679"
+  selfLink: /api/v1/namespaces/default/services/eventserver-lb
+  uid: 5cfe2d01-f5ca-11e9-9e6d-42010a800099
+spec:
+  clusterIP: 10.27.247.87
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32177
+    port: 8082
+    protocol: TCP
+    targetPort: 8082
+  selector:
+    run: deploy2
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 34.69.43.50
+
